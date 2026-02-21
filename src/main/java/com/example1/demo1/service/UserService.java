@@ -35,4 +35,10 @@ public class UserService {
         User savedUser = userRepo.save(user); // save & get generated ID
         return modelMapper.map(savedUser, UserDTO.class);
     }
+
+    public UserDTO updateUser(UserDTO userDTO) {
+        User user = modelMapper.map(userDTO, User.class);
+        User updatedUser = userRepo.save(user);
+        return modelMapper.map(updatedUser, UserDTO.class);
+    }
 }
