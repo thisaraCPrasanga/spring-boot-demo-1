@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor //make plan constructor without Argument
 public class UserDTO {
 
-    @Id //make id is primary key
+
     private int id;
     private String name;
 }

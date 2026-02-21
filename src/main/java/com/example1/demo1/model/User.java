@@ -6,14 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//Database
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class User {
 
-    @Id
-    private int id;
+    @Id //make id is primary key    private int id;
     private String name;
 
 }
