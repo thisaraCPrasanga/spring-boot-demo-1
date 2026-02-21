@@ -46,4 +46,9 @@ public class UserService {
         userRepo.deleteById(userId);
         return "User deleted successfully";
     }
+
+    public UserDTO getUser(Integer userId) {
+        User user = userRepo.getUserById(userId);
+        return modelMapper.map(user, UserDTO.class);
+    }
 }

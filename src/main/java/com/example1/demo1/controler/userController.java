@@ -34,4 +34,9 @@ public class userController {
     public String deleteUser(@PathVariable Integer id) {
         return userService.deleteUser(id);
     }
+
+    @GetMapping("/getUser/{id}")
+    public UserDTO getUser(@PathVariable Integer id) {
+        return userService.getUser(id);
+    }
 }
