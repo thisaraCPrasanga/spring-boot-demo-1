@@ -20,12 +20,19 @@ public class UserService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<UserDTO> getAllUsers(){
-        List<User>UserList = userRepo.findAll();
-        return modelMapper.map(UserList, new TypeToken<List<UserDTO>>(){}.getType());
+    public List<UserDTO> getAllUsers() {
+        List<User> UserList = userRepo.findAll();
+        return modelMapper.map(UserList, new TypeToken<List<UserDTO>>() {
+        }.getType());
 
-        //modelmapper required => data list and data type
-        //there for we use identify to datatype of UserDTO => new TypeToken<UserDTO>(){}.getType() that
+        // modelmapper required => data list and data type
+        // there for we use identify to datatype of UserDTO => new
+        // TypeToken<UserDTO>(){}.getType() that
     }
 
+    public UserDTO addUser(UserDTO userDTO) {
+        User user = modelMapper.map(userDTO, User.class);
+        User savedUser = userRepo.save(user); // save & get generated ID
+        return modelMapper.map(savedUser, UserDTO.class);
+    }
 }

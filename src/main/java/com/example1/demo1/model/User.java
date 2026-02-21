@@ -13,7 +13,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
 
-    @Id //make id is primary key    private int id;
+    @Id
+    private int id;
+
     private String name;
 
 }
